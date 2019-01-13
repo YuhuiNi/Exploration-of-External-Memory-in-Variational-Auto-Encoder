@@ -16,10 +16,13 @@ We combined these two ideas by using a soft, attention-like read/write operation
 
 We propose a VAE based model that has an memory matrix as in VQ-VAE, but with soft and differentiable extraction operation. Specifically, we access information by similarity, but instead of choosing the closets embedding, we extract a weighted average of the embedding (implement as the row of memory matrix) with weights given by the similarity. Mathematically, we call the memory matrix M, and let the extraction r be defined as 
 
-$$r=\sum_{i}w_iM(i),\ \sum w_i=1,\ 0\leq w_i\geq 1$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$r=\sum_{i}w_iM(i),\&space;\sum&space;w_i=1,\&space;0\leq&space;w_i\geq&space;1$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$r=\sum_{i}w_iM(i),\&space;\sum&space;w_i=1,\&space;0\leq&space;w_i\geq&space;1$$" title="$$r=\sum_{i}w_iM(i),\ \sum w_i=1,\ 0\leq w_i\geq 1$$" /></a>
 
 We try to use weights defined in different forms of similarity measure: L2 difference and cosine similarity. Take cosine similarity as an example:
 
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$k[u,v]=\frac{u\cdot&space;v}{||u|||v||}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$k[u,v]=\frac{u\cdot&space;v}{||u|||v||}$$" title="$$k[u,v]=\frac{u\cdot v}{||u|||v||}$$" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$w_i=\frac{exp(\beta_tK(z,M(i))}{\sum_jexp(\beta_tK(z,M(j))}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$w_i=\frac{exp(\beta_tK(z,M(i))}{\sum_jexp(\beta_tK(z,M(j))}$$" title="$$w_i=\frac{exp(\beta_tK(z,M(i))}{\sum_jexp(\beta_tK(z,M(j))}$$" /></a>
 
 In other words, the similarity is measured between the output of encoder, denoted by z, and every vector in the memory matrix. Then the similarity measure are processed by a SoftMax to produce the weights. The parameter β is a learned parameter that determined the strictness of SoftMax.
 We compared both L2 similarity and cosine similarity, and we found that L2 similarity will produce better results, although in NTM paper, cosine similarity is used. 

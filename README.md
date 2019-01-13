@@ -40,9 +40,7 @@ The improvements in reconstruction error possibly means that the vector quantiza
 
 See following images for examples of reconstruction samples, obtained from VQ-VAE and our model(original picture vs old model vs our model). We can see that both model cab reconstruct the image very well, and there is almost no difference by visual inspection.
 
-![](https://github.com/YuhuiNi/Exploration-of-External-Memory-in-Variational-Auto-Encoder/raw/master/images/result1.jpg)
-
-![](https://github.com/YuhuiNi/Exploration-of-External-Memory-in-Variational-Auto-Encoder/raw/master/images/result2.jpg)
+![](https://github.com/YuhuiNi/Exploration-of-External-Memory-in-Variational-Auto-Encoder/raw/master/images/result.jpg)
 
 
 

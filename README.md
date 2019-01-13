@@ -2,7 +2,7 @@
 
 ## Introduciton
 
-Many algorithms in deep learning are inspired by neuro-biology. In this project, we try to apply Neural Turing Machine [3], which is also a neural science inspired algorithm, to the context of deep generative model, specifically, Variational Auto-Encoder (VAE). 
+Many algorithms in deep learning are inspired by neuro-biology. In this project, we try to apply Neural Turing Machine, which is also a neural science inspired algorithm, to the context of deep generative model, specifically, Variational Auto-Encoder (VAE). 
 
 Neural Turing Machine (NTM) is one of the earliest works that discuss the effect of external memory in deep learning. Just like human can extract information from memory, we want neural network can gain useful information stored in memory. A NTM is fundamentally composed of a neural network, called the controller, and a 2D matrix called the memory matrix. At each time step, the neural network receives some input from the outside world, and sends some output to the outside world. However, the network also has the ability to read from select memory locations and the ability to write to select memory locations by attentional processes. The intuition is that by putting something important in memory as a kind of template, the neural network only needs to learn how to extract the template properly. NTM shows much better generalization results on learning sequential outputs (such as copying a binary sequence), which can be hard for plain RNN. However, since its appearance in 2014, a good contexts for its application has not been discovered.
 
